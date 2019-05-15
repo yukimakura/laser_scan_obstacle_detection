@@ -11,6 +11,7 @@ int main(int argc, char **argv)
     n_arg.getParam("body_cut_area_deg_plusminus", body_cut_data);
     obstacle_detection obs(near_dist,body_cut_data);
     ros::Subscriber sub = n.subscribe("scan", 10, &obstacle_detection::scan_CB,&obs);
+    
 
     ros::spin();
 

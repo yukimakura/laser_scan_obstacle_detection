@@ -8,12 +8,13 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
   std_msgs
+  object_direction_msgs
 )
 
 catkin_package(
   # INCLUDE_DIRS include
   LIBRARIES laser_scan_obstacle_detection
-  CATKIN_DEPENDS geometry_msgs roscpp rospy sensor_msgs std_msgs
+  CATKIN_DEPENDS geometry_msgs roscpp rospy sensor_msgs std_msgs object_direction_msgs
   DEPENDS system_lib
 )
 
