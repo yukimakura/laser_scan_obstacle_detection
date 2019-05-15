@@ -2,6 +2,7 @@
 #define   OBSTACLE_DETECTION_H
 #include "ros/ros.h"
 #include "sensor_msgs/LaserScan.h"
+#include "object_direction_msgs/Object_direction.h"
 #include <iostream>
 #include <utility>
 #include <vector>
@@ -17,6 +18,8 @@ class obstacle_detection{
 
         float near_dist_;
         float body_cut_data_;
+        ros::NodeHandle n_;
+        ros::Publisher obs_data_pub;
     public:
         obstacle_detection(float near_dist,float body_cut_data);
         void scan_CB(const sensor_msgs::LaserScan msg);
