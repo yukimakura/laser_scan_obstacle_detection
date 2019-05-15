@@ -11,12 +11,12 @@ obstacle_detection::obstacle_detection(float near_dist,float body_cut_data){
     body_cut_data_ = body_cut_data;
     std::cout << "detect_distance: " << near_dist_ << "m" << std::endl;
     std::cout << "body_cut_area_deg: +-" << body_cut_data_ << "deg" << std::endl;
-    obs_data_pub = n_.advertise<object_direction_msgs::Object_direction>("object_dir", 100);
+    obs_data_pub = n_.advertise<laser_scan_obstacle_detection::Object_direction>("object_dir", 100);
 }
 
 void obstacle_detection::search_obj_dir_(float deg,OBJECT_DIR *data){
     float area = (360.0 - (body_cut_data_*2))/5;
-    object_direction_msgs::Object_direction obsmsg;
+    laser_scan_obstacle_detection::Object_direction obsmsg;
     if(body_cut_data_<deg && deg <=body_cut_data_+area){
         data->r = 1;
     }else if(body_cut_data_ + area < deg && deg <= body_cut_data_ + (area*2)){
@@ -65,7 +65,7 @@ void obstacle_detection::scan_CB(const sensor_msgs::LaserScan msg)
     }
     print_obj_dir_(obj_dir);
     
-    object_direction_msgs::Object_direction obs_msg;
+    laser_scan_obstacle_detection::Object_direction obs_msg;
     obs_msg.f = obj_dir.f;
     obs_msg.fr = obj_dir.fr;
     obs_msg.r = obj_dir.r;

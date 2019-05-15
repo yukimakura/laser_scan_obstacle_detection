@@ -2,7 +2,7 @@
 #define   OBSTACLE_DETECTION_H
 #include "ros/ros.h"
 #include "sensor_msgs/LaserScan.h"
-#include "object_direction_msgs/Object_direction.h"
+#include "laser_scan_obstacle_detection/Object_direction.h"
 #include <iostream>
 #include <utility>
 #include <vector>
