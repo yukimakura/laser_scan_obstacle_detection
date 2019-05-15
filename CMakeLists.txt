@@ -34,7 +34,9 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+
 add_executable(obstacle_detection_node src/obstacle_detection_node.cpp src/obstacle_detection.cpp)
+add_dependencies(obstacle_detection_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 target_link_libraries(obstacle_detection_node
   ${catkin_LIBRARIES}
