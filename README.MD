@@ -1,5 +1,5 @@
 # laser_scan_obstacle_detection
-
+[![Build Status](https://travis-ci.org/yukimakura/laser_scan_obstacle_detection.svg?branch=master)](https://travis-ci.org/yukimakura/laser_scan_obstacle_detection)
 
 ## Description
 /scanトピックを購読して、パラメータ(detect_distance)で指定した値の
