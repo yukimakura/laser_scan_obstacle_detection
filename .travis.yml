@@ -1,0 +1,6 @@
+sudo: required
+dist: xenial
+
+script:
+  - bash -xve ./travis_prepare.bash
+  - source ~/catkin_ws/devel/setup.bash
